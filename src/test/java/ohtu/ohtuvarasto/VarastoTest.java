@@ -26,6 +26,30 @@ public class VarastoTest {
     }
 
     @Test
+    public void konstruktoriLuoValidinVaraston() {
+        Varasto varasto2 = new Varasto(-20);
+        assertEquals(0, varasto2.getSaldo(), vertailuTarkkuus);
+    }
+
+    @Test
+    public void konstruktoriLuoValidinVarastonSaldolla() {
+        Varasto varasto2 = new Varasto(5, 1);
+        assertEquals(4, varasto2.paljonkoMahtuu(), vertailuTarkkuus);
+    }
+
+    @Test
+    public void konstruktoriLuoValidinVarastonNegatiivisellaTilavuudellaJaSaldolla() {
+        Varasto varasto2 = new Varasto(-200, 1);
+        assertEquals(0, varasto2.getTilavuus(), vertailuTarkkuus);
+    }
+
+    @Test
+    public void konstruktoriLuoValidinVarastonNegatiivisellaTilavuudellaJaNegatiivisellaSaldolla() {
+        Varasto varasto2 = new Varasto(1, -1);
+        assertEquals(0, varasto2.getSaldo(), vertailuTarkkuus);
+    }
+
+    @Test
     public void uudellaVarastollaOikeaTilavuus() {
         assertEquals(10, varasto.getTilavuus(), vertailuTarkkuus);
     }
@@ -65,4 +89,35 @@ public class VarastoTest {
         assertEquals(4, varasto.paljonkoMahtuu(), vertailuTarkkuus);
     }
 
+    @Test
+    public void negatiivinenLisaysEiMuutaSaldoa() {
+        varasto.lisaaVarastoon(-2);
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+    }
+
+    @Test
+    public void yliSaldonLisaysTayttaaVaraston() {
+        varasto.lisaaVarastoon(9001);
+        assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void negatiivinenOttoEiMuutaSaldoa() {
+        varasto.lisaaVarastoon(5);
+        varasto.otaVarastosta(-2);
+        assertEquals(5, varasto.getSaldo(), vertailuTarkkuus);
+    }
+
+    @Test
+    public void annetaanKaikkiMitaVoidaan() {
+        varasto.lisaaVarastoon(7);
+        varasto.otaVarastosta(8);
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void merkkijonoEsitys() {
+        varasto.lisaaVarastoon(5);
+        assertEquals("saldo = 5.0, vielä tilaa 5.0",varasto.toString());
+    }
 }
