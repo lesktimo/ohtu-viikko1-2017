@@ -2,3 +2,5 @@
 /build/
 /build/*
 /.nb-gradle/
+/nhl/NhlStatistics1/.nb-gradle/
+/nhl/NhlStatistics1/build/
