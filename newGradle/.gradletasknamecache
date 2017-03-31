@@ -21,6 +21,8 @@ properties
 tasks
 check
 test
+checkstyleMain
+checkstyleTest
 compileJava
 compileTestJava
 processResources
@@ -51,6 +53,8 @@ properties
 tasks
 check
 test
+checkstyleMain
+checkstyleTest
 compileJava
 compileTestJava
 processResources
