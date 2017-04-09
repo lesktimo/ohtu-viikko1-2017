@@ -12,5 +12,4 @@
 /tehtävät/Verkkokauppa1/build/
 /newGradle/.gradle
 /newGradle/build
-*/taskHistory/
-*/taskHistory/*
+*.
