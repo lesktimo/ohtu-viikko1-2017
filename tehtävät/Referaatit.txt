@@ -1,0 +1,22 @@
+﻿Ohjelmistotuotantomenetelmien kehittyminen 1950-luvulta nykypäivään
+
+
+Edsger Dijkstraa lainaten ohjelmoinnista tuli tietokoneiden kapasiteetin kasvettua "giganttinen" ongelma. Uutta, kehittyvää laitteistoa haluttiin hyödyntää täysin, ja ala ajautui "ohjelmistokriisiin". Aluksi ohjelmistotuotantoon lainattiin insinöörialoilta tuttua, suunnitelmavetoista mallia, jossa pääpaino oli vaativuusmäärittelyssä, kattavassa suunnittelussa ja dokumentoinnissa, ja vasta niiden jälkeen toteutuksessa, testauksessa ja käyttöönotossa. Eri työvaiheet tehtiin lineaarisesti ja järjestyksestä poikkeamatta. Tämän on todettu olevan riittämätön täyttämään ohjelmistotuotannon tarpeet, sillä ohjelmointi ei ole yhtä suoraviivaista ohjeiden seuraamista, kuin esimerkiksi talonrakentaminen. 
+        Edellä esitetylle, ns. vesiputousmallille syntyi vastaukseksi inkrementaalisia ja iteratiivisia menetelmiä, joille on ominaista muun muassa aikaan sidotut iteraatiot sekä palautteen mukaan ohjautuva, evolutiivinen kehittäminen.
+
+
+Ohjelmistoarkkitehtuurin sisällyttäminen ketteriin ohjelmistotuotantomenetelmiin
+
+
+Arkkitehtuurin suunnittelu on vesiputousmalliin kuuluva piirre, sillä ketterät menetelmät pyrkivät olemaan suunnittelematta turhia asioita etukäteen, ja arkkitehtuurinkin pitäisi antaa piirtyä tarpeesta ohjelmiston ympärille, eikä sen suunnittelulle ole varattu omaa tilaa.
+        Eräs tapa sisällyttää arkkitehtuurin suunnittelu ketteriin menetelmiin, olisi tehdä se ennen projektin alkamista, sprint 0:ssa. Tämä kuitenkin riitelee ketterien periaatteiden kanssa, ja voi jopa rajoittaa lopullisen järjestelmän rakennetta.
+        Arkkitehtuuri voitaisiin myös eriyttää omaksi prosessikseen, jolloin sen tekisi ulkoistettu arkkitehtuuritiimi, jonka ei tarvitsisi muuten noudattaa ketteriä menelelmiä, kunhan se pystyisi noudattamaan kehitysryhmän prosessimallin määrittämiä aikatauluja. Tämä voi kuitenkin johtaa siihen, että erillinen tiimi ei huomioi riittävän hyvin järjestelmän muuttuvia vaatimuksia.
+        Arkkitehtuurin suunnittelu voidaan myös tehdä ketterien menetelmien mukaisissa design spikeissä, tai omilla arkkitehtuurijaksoillaan tai -tarinoillaan, jolloin ohjelmiston arkkitehtuurin suunnittelemiseen käytetään enemmän resursseja ketteriä periaatteita noudattaen.
+
+
+Metriikat käytänteiden tukena ohjelmiston laadun arvioimisessa
+
+
+Ohjelmiston laadun ja kehittämisen käytänteiden tukena voidaan käyttää erilaisia mitattavia määreitä. Koodikirnulla voidaan arvioida ohjelmiston muutoksien vaikutusta sen virheherkkyyteen, esim. vertailemalla yhteenlaskettujen, käsiteltyjen ja poistettujen koodirivien, tiedostojen ja muutosten määrien erilaisia suhteita.
+Verkkoanalyysi taas kertoo ohjelmiston komponenttien riippuvuuksien vaikutusta virhealttiuteen paremmalla hyötyasteella kuin pelkät komponenttien monimutkaisuutta mittaavat metriikat.
+Ohjelmistojen testaaminen on kriittinen osa laadun takaamista. Testikattavuudella voidaan analysoida ohjelmiston lähdekoodin tehokkuutta sekä kattavuutta ja mutaatiotestauksella sen laatua.
